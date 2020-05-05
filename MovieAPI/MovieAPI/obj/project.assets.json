@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bjorn Jongenelen\\Documents\\SCHOOL\\2de jaar\\3de module\\cloud api's\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Bjorn Jongenelen\\Documents\\SCHOOL\\2de jaar\\3de module\\cloud api's\\MovieAPI\\MovieTime\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
       "projectName": "MovieAPI",
-      "projectPath": "C:\\Users\\Bjorn Jongenelen\\Documents\\SCHOOL\\2de jaar\\3de module\\cloud api's\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
+      "projectPath": "C:\\Users\\Bjorn Jongenelen\\Documents\\SCHOOL\\2de jaar\\3de module\\cloud api's\\MovieAPI\\MovieTime\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
       "packagesPath": "C:\\Users\\Bjorn Jongenelen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bjorn Jongenelen\\Documents\\SCHOOL\\2de jaar\\3de module\\cloud api's\\MovieAPI\\MovieAPI\\obj\\",
+      "outputPath": "C:\\Users\\Bjorn Jongenelen\\Documents\\SCHOOL\\2de jaar\\3de module\\cloud api's\\MovieAPI\\MovieTime\\MovieAPI\\MovieAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -48,24 +48,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300-preview-015048\\RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
   }
