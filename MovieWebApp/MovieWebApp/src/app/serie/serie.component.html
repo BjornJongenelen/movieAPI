@@ -1,1 +1,43 @@
 <p>serie works!</p>
+<p>
+    tittle van de serie:
+    <input type="text" [(ngModel)]="tittle">
+</p>
+
+<p>
+    Kies het genre
+    <select [(ngModel)]=genre>
+        <option value="Actie">Actie</option>
+        <option value="Avontuur">Avontuur</option>
+        <option value="Drama">Drama</option>
+        <option value="Fantasie">Fantasie</option>
+        <option value="FiloSofisch">FiloSofisch</option>
+        <option value="Historisch">Historisch</option>
+        <option value="Historische fictie">Historische fictie</option>
+        <option value="Horror">Horror</option>
+        <option value="komedie">komedie</option>
+        <option value="Magisch realisme">Magisch realisme</option>
+        <option value="Misdaad">Misdaad</option>
+        <option value="Mysterie">Mysterie</option>
+        <option value="Paranoïde fictie">Paranoïde fictie</option>
+        <option value="Politiek">Politiek</option>
+        <option value="Romantiek">Romantiek</option>
+        <option value="Saga">Saga</option>
+        <option value="Satire">Satire</option>
+        <option value="Science fiction">Science fiction</option>
+        <option value="Sociaal">Sociaal</option>
+        <option value="Speculatief">Speculatief</option>
+        <option value="Thriller">Thriller</option>
+        <option value="Urban">Urban</option>
+        <option value="Western">Western</option>
+
+      </select>
+</p>
+
+<p>regisseur: <input type="text" [(ngModel)]="regisseur"></p>
+<p>Jaar: <input type="text" [(ngModel)]="jaar"></p>
+<p>seizoen: <input type="text" [(ngModel)]="seizoen"></p>
+<p>aflevering: <input type="text" [(ngModel)]="aflevering"></p>
+
+
+<button (click)="sendData()"> send data </button>

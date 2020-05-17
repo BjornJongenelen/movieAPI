@@ -17,7 +17,13 @@ export class FilmComponent implements OnInit {
   constructor() { }
 
   sendData(){
-   console.log("heloeeeeee") 
+   console.log("heloeeeeee")
+   console.log(this.tittle) 
+   console.log(this.genre)
+   console.log(this.regisseur)
+   console.log(this.jaar)
+   console.log(this.oscar)
+   console.log(this.speelduur)     
   }
 
   ngOnInit(): void {
