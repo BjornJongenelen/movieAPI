@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieTimeService } from '../Service/movie-time.service';
 
 @Component({
   selector: 'app-film',
@@ -14,7 +15,9 @@ export class FilmComponent implements OnInit {
   oscar:number
   speelduur:number
 
-  constructor() { }
+  constructor(private svc: MovieTimeService) { 
+    
+  }
 
   sendData(){
    console.log("heloeeeeee")

@@ -10,6 +10,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { RouterModule } from '@angular/router';
 import {FormsModule} from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     FilmComponent,
     SerieComponent,
     ActeurComponent,
-    HomePageComponent
+    HomePageComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
