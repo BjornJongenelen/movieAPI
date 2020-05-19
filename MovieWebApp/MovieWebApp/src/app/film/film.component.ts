@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieTimeService } from '../Service/movie-time.service';
+import { MovieTimeService, Ifilm } from '../Service/movie-time.service';
+import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-film',
@@ -8,26 +9,27 @@ import { MovieTimeService } from '../Service/movie-time.service';
 })
 export class FilmComponent implements OnInit {
 
-  tittle:string
-  genre: string
+  film:Ifilm = new Ifilm
+
+  tittel:string
+  genre:string
+  acteur:string
   regisseur:string
-  jaar:number 
-  oscar:number
-  speelduur:number
+  jaar:string
+  oscar:string
+  speelduur:string
 
   constructor(private svc: MovieTimeService) { 
-    
+
   }
 
-  sendData(){
-   console.log("heloeeeeee")
-   console.log(this.tittle) 
-   console.log(this.genre)
-   console.log(this.regisseur)
-   console.log(this.jaar)
-   console.log(this.oscar)
-   console.log(this.speelduur)     
+   sendData(){
+   
+    console.log(this.oscar)
+
   }
+
+
 
   ngOnInit(): void {
   }

@@ -1,12 +1,12 @@
 <p>film toevoegen</p>
 <p>
     tittle van de film:
-    <input type="text" [(ngModel)]="tittle">
+    <input type="text" [(ngModel)]="tittel">
 </p>
 
 <p>
     Kies het genre
-    <select [(ngModel)]=genre>
+    <select [(ngModel)]="genre">
         <option value="Actie">Actie</option>
         <option value="Avontuur">Avontuur</option>
         <option value="Drama">Drama</option>
@@ -33,10 +33,18 @@
 
       </select>
 </p>
-
+<p>acteur: <input type="text" [(ngModel)]="acteur"></p>
 <p>regisseur: <input type="text" [(ngModel)]="regisseur"></p>
 <p>Jaar: <input type="text" [(ngModel)]="jaar"></p>
-<p>Oscar: <input type="text" [(ngModel)]="oscar"></p>
+
+
+<label>heeft deze film oscars gewonnen ?</label><br>
+<input id="yes" value="true" type="radio" [(ngModel)]="oscar">
+<label for="yes">Yes</label><br>
+<input id="no" value="false" type="radio" [(ngModel)]="oscar">
+<label for="no">No</label>
+
+
 <p>SpeelDuur: <input type="text" [(ngModel)]="speelduur"></p>
 
 <button (click)="sendData()"> send data </button>

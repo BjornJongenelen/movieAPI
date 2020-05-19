@@ -44,21 +44,23 @@ export class MovieTimeService {
   }
 ///////////////////////////////////////////sending data 
 
-sendFilmData(){
-  return this.http.post<Ifilm>("")
+sendFilmData(film : Ifilm){
+  return this.http.post<Ifilm>(`https://localhost:44356/film`,film)
 }
 
-sendSerieData(){
-  return this.http.post<ISerie>("")
+sendSerieData(serie: ISerie){
+  return this.http.post<ISerie>(`https://localhost:44356/serie`,serie)
 }
 
-sendActorData(){
- return this.http.post<IActeur>("") 
+sendActorData(acteur : IActeur){
+ return this.http.post<IActeur>(`https://localhost:44356/acteur`, acteur) 
 }
 
-sendUserData(){
-  return this.http.post<Iuser>("")
+sendUserData(user : Iuser){
+  return this.http.post<Iuser>(`https://localhost:44356/user`,user)
 }
+
+//////////////////////////////////////////////////update data
 
 
   constructor(private http:HttpClient) { }
@@ -66,17 +68,17 @@ sendUserData(){
    
 }
 
-export interface Ifilm{
-  tittel:string;
-  genre: string;
-  acteur : string;
-  regisseur : string;
-  jaar : number;
-  oscar: number;
-  speelduur:number;
+export class Ifilm{
+  Tittel:string;
+  Genre: string;
+  Acteur : string;
+  Regisseur : string;
+  Jaar : number;
+  Oscar: boolean;
+  Speelduur:number;
 }
 
-export interface ISerie{
+export class ISerie{
   tittel:string;
   genre:string;
   acteurs: string;
@@ -86,7 +88,7 @@ export interface ISerie{
   regisseur : string;
 }
 
-export interface IActeur{
+export class IActeur{
   naam:string;
   leeftijd: number;
   geboortedatum:Date;
@@ -94,7 +96,7 @@ export interface IActeur{
   oscar:number;
 }
 
-export interface Iuser{
+export class Iuser{
   Username:string;
   Password:string;
   ID:number;
