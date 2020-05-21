@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OQ/H/dfZq4IhftCb3nbPWisXxpuxHXv5sdu+/0ikWV+xlmze6Xu05S16wysfEm3nBqJfQ0Tm9oUgEktdP+FutA==",
+  "dgSpecHash": "fo9ryQcsca+NJMxYxYnUIFEjt1uDOMqTqf9NDDOuWv0IcVjsuhQKuVdYqZU0mbdBpXZGfRx7L7GW9JcSvcmS+Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bjorn Jongenelen\\Documents\\SCHOOL\\2de jaar\\3de module\\cloud api's\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
+  "projectFilePath": "C:\\Users\\Bjorn Jongenelen\\Documents\\SCHOOL\\2de jaar\\3de module\\cloud api's\\MovieTimeAPI\\movieAPI\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bjorn Jongenelen\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Bjorn Jongenelen\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.4\\microsoft.aspnetcore.jsonpatch.3.1.4.nupkg.sha512",

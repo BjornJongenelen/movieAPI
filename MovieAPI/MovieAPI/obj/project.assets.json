@@ -5583,11 +5583,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bjorn Jongenelen\\Documents\\SCHOOL\\2de jaar\\3de module\\cloud api's\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Bjorn Jongenelen\\Documents\\SCHOOL\\2de jaar\\3de module\\cloud api's\\MovieTimeAPI\\movieAPI\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
       "projectName": "MovieAPI",
-      "projectPath": "C:\\Users\\Bjorn Jongenelen\\Documents\\SCHOOL\\2de jaar\\3de module\\cloud api's\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
+      "projectPath": "C:\\Users\\Bjorn Jongenelen\\Documents\\SCHOOL\\2de jaar\\3de module\\cloud api's\\MovieTimeAPI\\movieAPI\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
       "packagesPath": "C:\\Users\\Bjorn Jongenelen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bjorn Jongenelen\\Documents\\SCHOOL\\2de jaar\\3de module\\cloud api's\\MovieAPI\\MovieAPI\\obj\\",
+      "outputPath": "C:\\Users\\Bjorn Jongenelen\\Documents\\SCHOOL\\2de jaar\\3de module\\cloud api's\\MovieTimeAPI\\movieAPI\\MovieAPI\\MovieAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,50 +1,68 @@
-<p>film toevoegen</p>
-<p>
-    tittle van de film:
-    <input type="text" [(ngModel)]="tittel">
-</p>
+<p>normal users kunnen een afspeel lijst maken van de de films die ze willen zien en als de database er geschikt voor was ook films op kunen zien </p>
+<p>admins = films etc toevoegen verwdijeren updaten </p>
 
-<p>
-    Kies het genre
-    <select [(ngModel)]="genre">
-        <option value="Actie">Actie</option>
-        <option value="Avontuur">Avontuur</option>
-        <option value="Drama">Drama</option>
-        <option value="Fantasie">Fantasie</option>
-        <option value="FiloSofisch">FiloSofisch</option>
-        <option value="Historisch">Historisch</option>
-        <option value="Historische fictie">Historische fictie</option>
-        <option value="Horror">Horror</option>
-        <option value="komedie">komedie</option>
-        <option value="Magisch realisme">Magisch realisme</option>
-        <option value="Misdaad">Misdaad</option>
-        <option value="Mysterie">Mysterie</option>
-        <option value="Paranoïde fictie">Paranoïde fictie</option>
-        <option value="Politiek">Politiek</option>
-        <option value="Romantiek">Romantiek</option>
-        <option value="Saga">Saga</option>
-        <option value="Satire">Satire</option>
-        <option value="Science fiction">Science fiction</option>
-        <option value="Sociaal">Sociaal</option>
-        <option value="Speculatief">Speculatief</option>
-        <option value="Thriller">Thriller</option>
-        <option value="Urban">Urban</option>
-        <option value="Western">Western</option>
+<input type="search" ([ngModel])="zoek" value="search">
+<p>my movies </p>
+<p>{{film.Tittel}}</p>
 
-      </select>
-</p>
-<p>acteur: <input type="text" [(ngModel)]="acteur"></p>
-<p>regisseur: <input type="text" [(ngModel)]="regisseur"></p>
-<p>Jaar: <input type="text" [(ngModel)]="jaar"></p>
+<div *ngIf="ShowAdd==true">
+
+    <div>
+        <p>film toevoegen</p>
+        <p>
+            tittle van de film:
+            <input type="text" [(ngModel)]="tittel">
+        </p>
+
+        <p>
+            Kies het genre
+            <select [(ngModel)]="genre">
+            <option value="Actie">Actie</option>
+            <option value="Avontuur">Avontuur</option>
+            <option value="Drama">Drama</option>
+            <option value="Fantasie">Fantasie</option>
+            <option value="FiloSofisch">FiloSofisch</option>
+            <option value="Historisch">Historisch</option>
+            <option value="Historische fictie">Historische fictie</option>
+            <option value="Horror">Horror</option>
+            <option value="komedie">komedie</option>
+            <option value="Magisch realisme">Magisch realisme</option>
+            <option value="Misdaad">Misdaad</option>
+            <option value="Mysterie">Mysterie</option>
+            <option value="Paranoïde fictie">Paranoïde fictie</option>
+            <option value="Politiek">Politiek</option>
+            <option value="Romantiek">Romantiek</option>
+            <option value="Saga">Saga</option>
+            <option value="Satire">Satire</option>
+            <option value="Science fiction">Science fiction</option>
+            <option value="Sociaal">Sociaal</option>
+            <option value="Speculatief">Speculatief</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Urban">Urban</option>
+            <option value="Western">Western</option>
+    
+          </select>
+        </p>
+        <p>acteur: <input type="text" [(ngModel)]="acteur"></p>
+        <p>regisseur: <input type="text" [(ngModel)]="regisseur"></p>
+        <p>Jaar: <input type="text" [(ngModel)]="jaar"></p>
 
 
-<label>heeft deze film oscars gewonnen ?</label><br>
-<input id="yes" value="true" type="radio" [(ngModel)]="oscar">
-<label for="yes">Yes</label><br>
-<input id="no" value="false" type="radio" [(ngModel)]="oscar">
-<label for="no">No</label>
+        <label>heeft deze film oscars gewonnen ?</label><br>
+        <input id="yes" value="true" type="radio" [(ngModel)]="oscar">
+        <label for="yes">Yes</label><br>
+        <input id="no" value="false" type="radio" [(ngModel)]="oscar">
+        <label for="no">No</label>
 
 
-<p>SpeelDuur: <input type="text" [(ngModel)]="speelduur"></p>
+        <p>SpeelDuur: <input type="text" [(ngModel)]="speelduur"></p>
 
-<button (click)="sendData()"> send data </button>
+        <button (click)="sendData()"> send data </button>
+    </div>
+
+</div>
+
+<br><button (click)="AddMovie()" id="AddMovie">Add Movie</button><br>
+
+<p>verwijder film:<input type="text" [(ngModel)]="remove"></p>
+<button (click)="deleteMovie()">delete movie</button>

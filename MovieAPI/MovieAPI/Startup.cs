@@ -29,7 +29,7 @@ namespace MovieAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<MovieTimeContext>(
-                options => options.UseMySql("server=localhost;user id=root;database=moviedatabase;persistsecurityinfo=True;allowuservariables=True")
+                options => options.UseMySql("server=localhost;user id=root;database=movie database;persistsecurityinfo=True;allowuservariables=True")
                    // Configuration.GetConnectionString("DefaultConnection")
                    // )
                 );

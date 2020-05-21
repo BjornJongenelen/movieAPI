@@ -10,7 +10,10 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { RouterModule } from '@angular/router';
 import {FormsModule} from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
-import { UserComponent } from './user/user.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+
+
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { UserComponent } from './user/user.component';
     SerieComponent,
     ActeurComponent,
     HomePageComponent,
-    UserComponent
+    LoginComponent,
+    AdminComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,8 @@ import { UserComponent } from './user/user.component';
       {path: "films", component : FilmComponent},
       {path: "series", component : SerieComponent},
       {path: "acteurs", component : ActeurComponent},
+      {path: "login", component : LoginComponent},
+      {path : "admin", component: AdminComponent},
     ], {useHash: true}),
   ],
   providers: [],

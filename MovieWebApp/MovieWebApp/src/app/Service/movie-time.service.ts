@@ -26,7 +26,7 @@ export class MovieTimeService {
   }
 
 //////////////////////////////////////////delete data form api 
-//moet var toevoegen 
+
   deleteFilmData(tittle:string){
     return this.http.delete<Ifilm>(`https://localhost:44356/film/${tittle}`)
   }
@@ -64,8 +64,6 @@ sendUserData(user : Iuser){
 
 
   constructor(private http:HttpClient) { }
-
-   
 }
 
 export class Ifilm{
