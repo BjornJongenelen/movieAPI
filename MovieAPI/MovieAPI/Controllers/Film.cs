@@ -31,37 +31,38 @@ namespace MovieAPI.Controllers
 
 
         //read all data 
-        //[HttpGet]
-        //public List<film> GetAllMovies()
-        //{
+        [HttpGet]
+        public List<film> GetAllMovies()
+        {
 
-        //    return context.film.ToList();
-        //}
+            return context.film.ToList();
+        }
 
         //-------------------------------------------------paging
 
-        [HttpGet]
-        public List<film> GetAllMovies(string genre, string tittel, int? page, int length = 2)
-        {
-            IQueryable<film> query = context.film;
+        //[HttpGet]
+        //public List<film> GetAllMovies(string genre, string tittel, int? page, int length = 2)
+        //{
+        //    //IQueryable<film> query = context.film;
 
-            if (!string.IsNullOrWhiteSpace(genre))
-                query = query.Where(d => d.Genre == genre);
-            if (!string.IsNullOrWhiteSpace(tittel))
-                query = query.Where(d => d.Tittel == tittel);
+        //    //if (!string.IsNullOrWhiteSpace(genre))
+        //    //    query = query.Where(d => d.Genre == genre);
+        //    //if (!string.IsNullOrWhiteSpace(tittel))
+        //    //    query = query.Where(d => d.Tittel == tittel);
 
-            if (page.HasValue)
-                query = query.Skip(page.Value * length);
-            query = query.Take(length);
+        //    //if (page.HasValue)
+        //    //    query = query.Skip(page.Value * length);
+        //    //query = query.Take(length);
 
-            return query.ToList();
-        }
+        //    //return query.ToList();
+        //}
 
         //delete
-        [HttpDelete ("{tittel}")]
-        public IActionResult DeleteMovie(string tittel)
+        [HttpDelete ("{id}")]
+        public IActionResult DeleteMovie(int id)
         {
-            var film = context.film.Find(tittel);
+            var film = context.film.Find(id);
+
             if (film == null)
                 return NotFound("not found");
            

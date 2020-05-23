@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieTimeService } from '../Service/movie-time.service';
 
 @Component({
   selector: 'app-login',
@@ -7,17 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  Username:string
-  Password:string
-  email:string
 
-
-  constructor() { }
+  constructor(private auth: MovieTimeService) { }
 
   ngOnInit(): void {
   }
 
-  LoginUser(){
-    console.log("yaaaaaaas")
+  LoginUser(event){
+    event.preventDefault()
+    const target = event.target
+    const Username = target.querySelector("#Username").value
+    const Password = target.querySelector("#Password").value
+    console.log(Username,Password)
   }
 }

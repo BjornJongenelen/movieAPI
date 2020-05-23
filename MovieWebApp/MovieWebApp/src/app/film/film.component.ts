@@ -24,6 +24,9 @@ export class FilmComponent implements OnInit {
   remove:string
   ShowAdd:boolean
   zoek:string
+
+  id: number
+  movieList;
   constructor(private svc: MovieTimeService) { 
   this.ShowAdd = false
   }
@@ -46,24 +49,26 @@ export class FilmComponent implements OnInit {
     document.getElementById("AddMovie").innerHTML = "Show more"
   }
 
-  getAllData(){
+  getAllData=()=>{
     console.log("fetch data")
-    this.svc.getFilmData().subscribe(result=> {
+    this.movieList = this.svc.getFilmData().subscribe(result=> {
 
-      this.film = result
       console.log("request recieveds")
       console.log(result)
-      console.log(this.film.Tittel)
+      this.movieList=result
     })
   }
 
   deleteMovie(){
-    this.svc.deleteFilmData(this.remove).subscribe()
+    
+    this.id = parseInt(this.remove)
+    this.svc.deleteFilmData(this.id).subscribe()
 
   }
 
   ngOnInit(): void {
-
+    this.getAllData()
+    
   }
     
 }

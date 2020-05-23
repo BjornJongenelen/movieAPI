@@ -27,7 +27,7 @@ export class MovieTimeService {
 
 //////////////////////////////////////////delete data form api 
 
-  deleteFilmData(tittle:string){
+  deleteFilmData(tittle:number){
     return this.http.delete<Ifilm>(`https://localhost:44356/film/${tittle}`)
   }
 
