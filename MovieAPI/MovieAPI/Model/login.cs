@@ -12,8 +12,6 @@ namespace MovieAPI.Model
     public class login
     {
         [Key]
-        public int MyProperty { get; set; }
-
         [Required]
         public string Username { get; set; }
 

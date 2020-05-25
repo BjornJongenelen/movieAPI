@@ -38,6 +38,13 @@ namespace MovieAPI.Controllers
             return context.film.ToList();
         }
 
+        //[HttpGet ("search")]
+        //public List<film> search()
+        //{
+        //    IQueryable<film> query = context.film
+        //    return context.film.ToList();
+        //}
+
         //-------------------------------------------------paging
 
         //[HttpGet]

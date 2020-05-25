@@ -1,17 +1,13 @@
-<ul>
-    <li>
-        <a routerLink='/home' class="nav-link waves-light">Home</a>
-    </li>
-    <!-- voor knoppen routerlinkActive = 'ui-button-succes   -->
-    <li routerLinkActive='active'>
-        <a routerLink='/films' class="nav-link waves-light disabled">Movies</a>
-    </li>
-    <li routerlinkActive='active'>
-        <a routerLink='/series' class="nav-link waves-light disabled">series</a>
-    </li>
-    <li routerlinkActive='active'>
-        <a routerLink='/acteurs' class="nav-link waves-light disabled">Acterus</a>
-    </li>
-</ul>
+<!-- voor knoppen routerlinkActive = 'ui-button-succes   -->
+
+<nav class="nav">
+    <img src='Knipsel.PNG' width="100px">
+    <a class="nav-item" routerlinkActive="active" routerLink='/films'>Movies</a>
+    <a class="nav-item" routerlinkActive="active" routerLink='/series'>series</a>
+    <a class="nav-item" routerlinkActive="active" routerLink='/acteurs'>Acterus</a>
+    <a class="nav-item" routerlinkActive="active" routerLink='/login'>Login</a>
+    <img width="50px" height="25px" src="https://github.githubassets.com/images/modules/open_graph/github-mark.png">
+    <span class="nav-indicator "></span>
+</nav>
 
 <router-outlet></router-outlet>

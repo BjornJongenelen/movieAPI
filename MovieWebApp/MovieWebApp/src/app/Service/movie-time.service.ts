@@ -62,6 +62,9 @@ sendUserData(user : Iuser){
 
 //////////////////////////////////////////////////update data
 
+BasicLogin(){
+  return this.http.get<Ilogin>(`https://localhost:44356/user/login`)
+}
 
   constructor(private http:HttpClient) { }
 }
@@ -99,4 +102,10 @@ export class Iuser{
   Password:string;
   ID:number;
   Email:string;
+}
+
+export class Ilogin{
+  username:string;
+  wachtwoord:string;
+  email:string;
 }

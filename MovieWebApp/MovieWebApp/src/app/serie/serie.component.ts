@@ -14,6 +14,8 @@ export class SerieComponent implements OnInit {
   seizoen:number 
   aflevering:number
 
+  
+
   constructor() { }
 
   sendData(){

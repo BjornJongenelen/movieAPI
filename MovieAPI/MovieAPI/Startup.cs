@@ -64,11 +64,14 @@ namespace MovieAPI
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseCors();
 
-            
+
+
 
             app.UseEndpoints(endpoints =>
             {

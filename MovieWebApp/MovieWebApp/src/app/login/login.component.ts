@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   constructor(private auth: MovieTimeService) { }
 
   ngOnInit(): void {
+    this.auth.BasicLogin()
   }
 
   LoginUser(event){
