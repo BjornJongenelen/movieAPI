@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieTimeService, Ifilm } from '../Service/movie-time.service';
+import { TheMovieDatabaseService , Pagina, IResult} from '../Service/the-movie-database.service'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
@@ -10,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export class FilmComponent implements OnInit {
 
   film: Ifilm = new Ifilm
+  SliderFilm: Pagina = new Pagina
+  
 
   tittel: string
   genre : string
@@ -24,8 +27,11 @@ export class FilmComponent implements OnInit {
   zoek:string
 
   id: number
+
   movieList;
-  constructor(private svc: MovieTimeService) { 
+  filmDatalijst;
+
+  constructor(private svc: MovieTimeService , private TMdb: TheMovieDatabaseService) { 
   this.ShowAdd = false
  
   }
@@ -40,22 +46,25 @@ export class FilmComponent implements OnInit {
     this.film.Speelduur = parseInt(this.speelduur)
 
     //location.reload()
-
-    console.log(this.acteur, this.film.Acteur)
     console.log(this.film)
     this.svc.sendFilmData(this.film).subscribe()
     
   }
 
   ngOnInit(): void {
+
     this.getAllData()
-    
+
+    console.log("new database")
+     this.TMdb.getFilmDetails().subscribe(result=>{
+      this.filmDatalijst = result.results
+      console.log(this.filmDatalijst)
+    })
   }
 
   getAllData(){
     console.log("fetch data")
     this.movieList = this.svc.getFilmData().subscribe(result=> {
-
       console.log("request recieveds")
       console.log(result)
       this.movieList=result
