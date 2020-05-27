@@ -13,9 +13,18 @@
     />
 </div>
 
-<ul>
-    <li *ngFor="let x of filmDatalijst">{{filmDatalijst.title}}</li>
-</ul>
+<div class="tittel">
+    <h2>Trending deze week</h2>
+</div>
+
+
+<div class="ternding_container">
+    <div class="trending" *ngFor="let x of filmDatalijst">
+        <p>{{x.title}}</p>
+        <img src="https://image.tmdb.org/t/p/w500{{x.poster_path}}" width="80%" height="auto">
+    </div>
+</div>
+
 
 <!--
 <select>
@@ -106,3 +115,8 @@
 </div>
 
 <button class="Addmovie" (click)="ShowAddMovie()" id="AddMovie">Add new movie</button>
+
+<footer>
+    <img class="logo" src="assets/images/knipsel.png" width="120px" height="auto">
+    <p>Bjorn Jongenelen @AP Antwepren 2020</p>
+</footer>

@@ -83,7 +83,7 @@ export class ISerie{
   tittel:string;
   genre:string;
   acteurs: string;
-  jaar : number;
+  jaar: number;
   seizoen:number;
   afleveringen : number;
   regisseur : string;

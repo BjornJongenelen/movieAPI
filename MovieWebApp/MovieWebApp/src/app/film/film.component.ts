@@ -36,6 +36,13 @@ export class FilmComponent implements OnInit {
  
   }
 
+  ngOnInit(): void {
+
+    this.getAllData()
+    this.GetApiData()
+
+  }
+
    sendData(){
     this.film.Tittel = this.tittel
     this.film.Genre = this.genre
@@ -51,15 +58,12 @@ export class FilmComponent implements OnInit {
     
   }
 
-  ngOnInit(): void {
-
-    this.getAllData()
-
+  GetApiData(){
     console.log("new database")
-     this.TMdb.getFilmDetails().subscribe(result=>{
-      this.filmDatalijst = result.results
-      console.log(this.filmDatalijst)
-    })
+    this.TMdb.getFilmDetails().subscribe(result=>{
+     this.filmDatalijst = result.results
+     console.log(this.filmDatalijst)
+   })
   }
 
   getAllData(){

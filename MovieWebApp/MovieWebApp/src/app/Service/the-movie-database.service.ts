@@ -11,6 +11,10 @@ export class TheMovieDatabaseService {
   getFilmDetails(){
     return this.http.get<Pagina>("https://api.themoviedb.org/3/trending/movie/week?api_key=a836f37f45d7f23eaf59255acf2838fa")
   }
+
+  getSerieDetails(){
+    return this.http.get<Pagina>("https://api.themoviedb.org/3/trending/tv/week?api_key=a836f37f45d7f23eaf59255acf2838fa")
+  }
 }
 
 //prop get trending  https://developers.themoviedb.org/3/trending/get-trending

@@ -1,52 +1,107 @@
-<p>serie works!</p>
-
 <div class="wrapper">
     <img class="search-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K"
     />
-    <input class="search" placeholder="Search" type="text">
+    <input class="search" ([ngModel])="zoek" placeholder="Search" type="text">
     <img class="clear-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxLjk3NiA1MS45NzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxLjk3NiA1MS45NzY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDQuMzczLDcuNjAzYy0xMC4xMzctMTAuMTM3LTI2LjYzMi0xMC4xMzgtMzYuNzcsMGMtMTAuMTM4LDEwLjEzOC0xMC4xMzcsMjYuNjMyLDAsMzYuNzdzMjYuNjMyLDEwLjEzOCwzNi43NywwICAgQzU0LjUxLDM0LjIzNSw1NC41MSwxNy43NCw0NC4zNzMsNy42MDN6IE0zNi4yNDEsMzYuMjQxYy0wLjc4MSwwLjc4MS0yLjA0NywwLjc4MS0yLjgyOCwwbC03LjQyNS03LjQyNWwtNy43NzgsNy43NzggICBjLTAuNzgxLDAuNzgxLTIuMDQ3LDAuNzgxLTIuODI4LDBjLTAuNzgxLTAuNzgxLTAuNzgxLTIuMDQ3LDAtMi44MjhsNy43NzgtNy43NzhsLTcuNDI1LTcuNDI1Yy0wLjc4MS0wLjc4MS0wLjc4MS0yLjA0OCwwLTIuODI4ICAgYzAuNzgxLTAuNzgxLDIuMDQ3LTAuNzgxLDIuODI4LDBsNy40MjUsNy40MjVsNy4wNzEtNy4wNzFjMC43ODEtMC43ODEsMi4wNDctMC43ODEsMi44MjgsMGMwLjc4MSwwLjc4MSwwLjc4MSwyLjA0NywwLDIuODI4ICAgbC03LjA3MSw3LjA3MWw3LjQyNSw3LjQyNUMzNy4wMjIsMzQuMTk0LDM3LjAyMiwzNS40NiwzNi4yNDEsMzYuMjQxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo="
     />
 </div>
 
-<p>
-    tittle van de serie:
-    <input type="text" [(ngModel)]="tittle">
-</p>
-
-<p>
-    Kies het genre
-    <select [(ngModel)]=genre>
-        <option value="Actie">Actie</option>
-        <option value="Avontuur">Avontuur</option>
-        <option value="Drama">Drama</option>
-        <option value="Fantasie">Fantasie</option>
-        <option value="FiloSofisch">FiloSofisch</option>
-        <option value="Historisch">Historisch</option>
-        <option value="Historische fictie">Historische fictie</option>
-        <option value="Horror">Horror</option>
-        <option value="komedie">komedie</option>
-        <option value="Magisch realisme">Magisch realisme</option>
-        <option value="Misdaad">Misdaad</option>
-        <option value="Mysterie">Mysterie</option>
-        <option value="Paranoïde fictie">Paranoïde fictie</option>
-        <option value="Politiek">Politiek</option>
-        <option value="Romantiek">Romantiek</option>
-        <option value="Saga">Saga</option>
-        <option value="Satire">Satire</option>
-        <option value="Science fiction">Science fiction</option>
-        <option value="Sociaal">Sociaal</option>
-        <option value="Speculatief">Speculatief</option>
-        <option value="Thriller">Thriller</option>
-        <option value="Urban">Urban</option>
-        <option value="Western">Western</option>
-
-      </select>
-</p>
-
-<p>regisseur: <input type="text" [(ngModel)]="regisseur"></p>
-<p>Jaar: <input type="text" [(ngModel)]="jaar"></p>
-<p>seizoen: <input type="text" [(ngModel)]="seizoen"></p>
-<p>aflevering: <input type="text" [(ngModel)]="aflevering"></p>
+<div class="tittel">
+    <h2>Trending deze week</h2>
+</div>
 
 
-<button (click)="sendData()"> send data </button>
+<div class="ternding_container">
+    <div class="trending" *ngFor="let x of serieDatalijst">
+        <p>{{x.title}}</p>
+        <img src="https://image.tmdb.org/t/p/w500{{x.poster_path}}" width="80%" height="auto">
+    </div>
+</div>
+
+
+<!--
+<select>
+    <option value="null">filter by</option>
+    <option value="genre">genre</option>
+    <option value="jaar">jaar</option>
+</select>
+-->
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tittel</th>
+            <th>Genre</th>
+            <th>Acteur</th>
+            <th>Regisseur</th>
+            <th>Seizoen</th>
+            <th>Afleveringen </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tr *ngFor="let serie of serieList">
+        <td>{{serie.id}}</td>
+        <td>{{serie.tittel}}</td>
+        <td>{{serie.genre}}</td>
+        <td>{{serie.acteurs}}</td>
+        <td>{{serie.regisseur}}</td>
+        <td>{{serie.seizoen}}</td>
+        <td>{{serie.afleveringen}}</td>
+        <td><button class="deletebtn" (click)="deleteSerie(serie.id)">delete movie</button></td>
+    </tr>
+
+</table>
+
+<div class="parentCon" *ngIf="ShowAdd==true">
+    <h2>film toevoegen</h2>
+
+    <input placeholder="Tittel" type="text" [(ngModel)]="tittel"><br>
+    <input type="text" placeholder="Acteur" [(ngModel)]="acteur"><br>
+    <input type="text" placeholder="Regisseur" [(ngModel)]="regisseur "><br>
+    <input type="text" placeholder="Jaar" [(ngModel)]="jaar"><br>
+
+    <p class="grid-item">
+        Kies het genre
+        <select [(ngModel)]="genre">
+            <option value="Actie ">Actie</option>
+            <option value="Avontuur ">Avontuur</option>
+            <option value="Drama ">Drama</option>
+            <option value="Fantasie ">Fantasie</option>
+            <option value="FiloSofisch ">FiloSofisch</option>
+            <option value="Historisch ">Historisch</option>
+            <option value="Historische fictie ">Historische fictie</option>
+            <option value="Horror ">Horror</option>
+            <option value="komedie ">komedie</option>
+            <option value="Magisch realisme ">Magisch realisme</option>
+            <option value="Misdaad ">Misdaad</option>
+            <option value="Mysterie ">Mysterie</option>
+            <option value="Paranoïde fictie ">Paranoïde fictie</option>
+            <option value="Politiek ">Politiek</option>
+            <option value="Romantiek ">Romantiek</option>
+            <option value="Saga ">Saga</option>
+            <option value="Satire ">Satire</option>
+            <option value="Science fiction ">Science fiction</option>
+            <option value="Sociaal ">Sociaal</option>
+            <option value="Speculatief ">Speculatief</option>
+            <option value="Thriller ">Thriller</option>
+            <option value="Urban ">Urban</option>
+            <option value="Western ">Western</option>
+    
+          </select>
+    </p>
+
+    <div class="grid-item">
+        <input type="text" placeholder="Seizoen" [(ngModel)]="seizoen"><br>
+        <input type="text" placeholder="Afleveringen" [(ngModel)]="afleveringen"><br>
+    </div>
+    <button class="back" send (click)="sendData()"> send data </button>
+</div>
+
+<button class="AddSerie" (click)="ShowAddSerie()" id="AddSerie">Add new movie</button>
+
+<footer>
+    <img class="logo" src="assets/images/knipsel.png" width="120px" height="auto">
+    <p>Bjorn Jongenelen @AP Antwepren 2020</p>
+</footer>

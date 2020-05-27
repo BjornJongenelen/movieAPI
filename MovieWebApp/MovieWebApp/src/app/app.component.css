@@ -68,6 +68,8 @@ body {
 
 .logo {
     padding-top: 10px;
+    position: relative;
+    top: -5px;
 }
 
 @media (max-width: 580px) {
