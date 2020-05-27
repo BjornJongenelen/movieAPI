@@ -13,30 +13,53 @@
     />
 </div>
 
+<!--
 <select>
     <option value="null">filter by</option>
     <option value="genre">genre</option>
     <option value="jaar">jaar</option>
 </select>
+-->
 
-<p>my movies </p>
-<ul>
-    <li *ngFor="let film of movieList">{{film.id}} {{ film.tittel }}</li>
-</ul>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tittel</th>
+            <th>Genre</th>
+            <th>Acteur</th>
+            <th>Regisseur</th>
+            <th>Jaar</th>
+            <th>Oscar gewonnen</th>
+            <th></th>
+        </tr>
+    </thead>
 
+    <tr *ngFor="let film of movieList">
+        <td>{{film.id}}</td>
+        <td>{{film.tittel}}</td>
+        <td>{{film.genre}}</td>
+        <td>{{film.acteur}}</td>
+        <td>{{film.regisseur}}</td>
+        <td>{{film.jaar}}</td>
+        <td>{{film.oscar}}</td>
+        <td><button class="deletebtn" (click)="deleteMovie(film.id)">delete movie</button></td>
+    </tr>
 
-<div *ngIf="ShowAdd==true">
+</table>
 
-    <div>
-        <p>film toevoegen</p>
-        <p>
-            tittle van de film:
-            <input type="text" [(ngModel)]="tittel">
-        </p>
+<div class="parentCon" *ngIf="ShowAdd==true">
+    <h2>film toevoegen</h2>
 
-        <p>
-            Kies het genre
-            <select [(ngModel)]="genre">
+    <input placeholder="Tittel" type="text" [(ngModel)]="tittel"><br>
+    <input type="text" placeholder="Acteur" [(ngModel)]="acteur"><br>
+    <input type="text" placeholder="Regisseur" [(ngModel)]="regisseur "><br>
+    <input type="text" placeholder="Jaar" [(ngModel)]="jaar"><br>
+    <input type="text" placeholder="Speelduur" [(ngModel)]="speelduur "><br>
+
+    <p class="grid-item">
+        Kies het genre
+        <select [(ngModel)]="genre">
             <option value="Actie ">Actie</option>
             <option value="Avontuur ">Avontuur</option>
             <option value="Drama ">Drama</option>
@@ -62,33 +85,20 @@
             <option value="Western ">Western</option>
     
           </select>
-        </p>
-        <p>acteur: <input type="text" [(ngModel)]="acteur "></p>
-        <p>regisseur: <input type="text" [(ngModel)]="regisseur "></p>
-        <p>Jaar: <input type="text" [(ngModel)]="jaar"></p>
+    </p>
 
-
+    <div class="grid-item">
         <label>heeft deze film oscars gewonnen ?</label><br>
-        <input id="yes" value="true" type="radio" [(ngModel)]="oscar ">
-        <label for="yes">Yes</label><br>
-        <input id="no" value="false" type="radio" [(ngModel)]="oscar ">
-        <label for="no">No</label>
-
-
-
-        <p>SpeelDuur: <input type="text" [(ngModel)]="speelduur "></p>
-
-        <button (click)="sendData()"> send data </button>
+        <label class="container">ja
+        <input type="radio" checked="checked" id="yes" value="true" [(ngModel)]="oscar ">
+        <span class="checkmark"></span>
+      </label>
+        <label class="container">nee
+        <input type="radio" name="radio" id="no" value="false" [(ngModel)]="oscar ">
+        <span class="checkmark"></span>
+      </label>
     </div>
-
-</div>
-<div class="sidemenu">
-    <p (click)="ShowAddMovie()" id="AddMovie">Add new movie</p>
-    <p (click)="ShowRemoveMovie()" id="RemoveMovie">Delete a movie</p>
+    <button class="back" send (click)="sendData()"> send data </button>
 </div>
 
-
-<div *ngIf="ShowRemove==true">
-    <p>verwijder film:<input type="text " [(ngModel)]="delete"></p>
-    <button (click)="deleteMovie() ">delete movie</button>
-</div>
+<button class="Addmovie" (click)="ShowAddMovie()" id="AddMovie">Add new movie</button>

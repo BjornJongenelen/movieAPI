@@ -15,23 +15,23 @@ namespace MovieAPI
         public int id { get; set; }
 
         [Required]
-        [StringLength(50)]
+        //[StringLength(50)]
         public string Tittel { get; set; }
 
         public string Genre { get; set; }
 
-        public string Acteurs { get; set; }
+        public string Acteur { get; set; }
 
         public int Speelduur { get; set; }
 
         [Required]
-        [MaxLength(4)]
+        //[MaxLength(4)]
         public int Jaar { get; set; }
 
         public bool Oscar { get; set; }
 
         [Required]
-        [StringLength(50)]
+        //[StringLength(50)]
         public string Regisseur { get; set; }
 
 

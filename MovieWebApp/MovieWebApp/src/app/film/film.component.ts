@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieTimeService, Ifilm } from '../Service/movie-time.service';
-import { Subscriber, from } from 'rxjs';
-import{ JsonPipe } from '@angular/common'
-import { SafeStyle } from '@angular/platform-browser';
-import { flatten } from '@angular/compiler';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-film',
@@ -22,29 +19,32 @@ export class FilmComponent implements OnInit {
   oscar: string
   speelduur : string
 
-  delete:string
+  del:number
   ShowAdd:boolean
-  ShowRemove:boolean
   zoek:string
 
   id: number
   movieList;
   constructor(private svc: MovieTimeService) { 
   this.ShowAdd = false
-  this.ShowRemove = false
+ 
   }
 
    sendData(){
     this.film.Tittel = this.tittel
     this.film.Genre = this.genre
-    this.film.Regisseur = this.regisseur
     this.film.Acteur = this.acteur
+    this.film.Regisseur =this.regisseur
+    this.film.Jaar = parseInt(this.jaar)
     this.film.Oscar = JSON.parse(this.oscar)
     this.film.Speelduur = parseInt(this.speelduur)
-    this.film.Jaar = parseInt(this.jaar)
 
+    //location.reload()
+
+    console.log(this.acteur, this.film.Acteur)
     console.log(this.film)
     this.svc.sendFilmData(this.film).subscribe()
+    
   }
 
   ngOnInit(): void {
@@ -62,11 +62,11 @@ export class FilmComponent implements OnInit {
     })
   }
 
-  deleteMovie(){
+  deleteMovie(id){
     
-    this.id = parseInt(this.delete)
-    this.svc.deleteFilmData(this.id).subscribe()
-
+    this.del = parseInt(id)
+    this.svc.deleteFilmData(this.del).subscribe()
+    location.reload()
   }
 
   search(){
@@ -75,11 +75,10 @@ export class FilmComponent implements OnInit {
 
   ShowAddMovie(){
     this.ShowAdd = !this.ShowAdd
-    this.ShowRemove = false
+    if(this.ShowAdd)
+    document.getElementById("AddMovie").innerHTML = "back"
+    else
+    document.getElementById("AddMovie").innerHTML = "Add new movie"
   }
     
-  ShowRemoveMovie(){
-   this.ShowRemove = !this.ShowRemove
-   this.ShowAdd = false
-  }
 }
