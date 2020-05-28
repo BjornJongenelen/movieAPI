@@ -24,12 +24,12 @@ export class FilmComponent implements OnInit {
 
   del:number
   ShowAdd:boolean
+  shworesult: boolean
   zoek:string
-
-  id: number
 
   movieList;
   filmDatalijst;
+
 
   constructor(private svc: MovieTimeService , private TMdb: TheMovieDatabaseService) { 
   this.ShowAdd = false
@@ -75,16 +75,23 @@ export class FilmComponent implements OnInit {
     })
   }
 
-  deleteMovie(id){
+  search(){
+    console.log(this.zoek)
+    this.movieList= this.svc.searchFilm(this.zoek).subscribe(result=> {
+    this.movieList=result
+    console.log(result)
+    })
     
+    window.scrollBy(0, 1500);
+  }
+
+  deleteMovie(id){
     this.del = parseInt(id)
     this.svc.deleteFilmData(this.del).subscribe()
     location.reload()
   }
 
-  search(){
 
-  }
 
   ShowAddMovie(){
     this.ShowAdd = !this.ShowAdd

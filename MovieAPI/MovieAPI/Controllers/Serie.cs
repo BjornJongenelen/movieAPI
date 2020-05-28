@@ -36,6 +36,25 @@ namespace MovieAPI.Controllers
             return context.serie.ToList();
         }
 
+        [HttpGet("search/{zoekterm}")]
+        public List<serie> search(string zoekterm)
+        {
+            List<serie> gevondenFilm = new List<serie>();
+            var series = context.serie;
+            foreach (var serie in series)
+            {
+                if (serie.Tittel == zoekterm)
+                    gevondenFilm.Add(serie);
+
+                if (serie.Genre == zoekterm)
+                    gevondenFilm.Add(serie);
+
+                if (serie.Regisseur == zoekterm)
+                    gevondenFilm.Add(serie);
+            }
+            return gevondenFilm;
+        }
+
         //delete
         [Route("{tittel}")]
         [HttpDelete]

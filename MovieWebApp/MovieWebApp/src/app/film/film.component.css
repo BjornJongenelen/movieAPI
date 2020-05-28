@@ -1,3 +1,12 @@
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .ternding_container {
     padding-top: 20px;
     width: 80%;
@@ -36,9 +45,14 @@
 .wrapper {
     position: absolute;
     top: 27px;
-    right: 70px;
+    right: 110px;
     display: flex;
     width: 200px;
+}
+
+.wrapper>.clear {
+    position: relative;
+    top: -3px;
 }
 
 .search {
@@ -59,17 +73,10 @@
     width: 14px;
 }
 
-.clear-icon {
-    position: absolute;
-    top: 9px;
-    right: 8px;
-    width: 12px;
-    cursor: pointer;
-    visibility: hidden;
-}
-
 .search:hover,
-.search:focus {
+.search:focus,
+.clear:hover,
+.clear:focus {
     border: 1px solid #009688;
     background-color: white;
 }
@@ -107,6 +114,7 @@ tr:last-of-type {
     border-bottom: 2px solid #2F7AE5;
 }
 
+.clear,
 .deletebtn,
 .Addmovie,
 .back {

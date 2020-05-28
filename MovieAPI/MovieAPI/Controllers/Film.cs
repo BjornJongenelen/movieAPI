@@ -38,12 +38,27 @@ namespace MovieAPI.Controllers
             return context.film.ToList();
         }
 
-        //[HttpGet ("search")]
-        //public List<film> search()
-        //{
-        //    IQueryable<film> query = context.film
-        //    return context.film.ToList();
-        //}
+        [HttpGet("search/{zoekterm}")]
+        public List<film> search(string zoekterm)
+        {
+            List<film> gevondenFilm = new List<film>();
+            var films = context.film;
+            foreach( var film in films)
+            {
+                if (film.Tittel == zoekterm)
+                    gevondenFilm.Add(film);
+
+                if (film.Acteur == zoekterm)
+                    gevondenFilm.Add(film);
+
+                if (film.Regisseur == zoekterm)
+                    gevondenFilm.Add(film);
+
+                if (film.Genre == zoekterm)
+                    gevondenFilm.Add(film);
+            }
+            return gevondenFilm;
+        }
 
         //-------------------------------------------------paging
 

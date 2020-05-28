@@ -20,7 +20,7 @@ namespace MovieAPI
 
         public string Genre { get; set; }
         
-        //list van hoofdrol spelers 
+        // hoofdrol spelers 
         public string Acteurs { get; set; }
 
         public int Seizoen { get; set; }

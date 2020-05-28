@@ -60,6 +60,15 @@ sendUserData(user : Iuser){
   return this.http.post<Iuser>(`https://localhost:44356/user`,user)
 }
 
+///////////////////////////////////////////////////////////////////////////////// zoekfunctie
+
+searchFilm(zoekterm: string){
+  return this.http.get<Ifilm>(`https://localhost:44356/film/search/${zoekterm}`)
+}
+
+searchSerie(zoekterm: string){
+  return this.http.get<ISerie>(`https://localhost:44356/serie/search/${zoekterm}`)
+}
 //////////////////////////////////////////////////update data
 
 BasicLogin(){

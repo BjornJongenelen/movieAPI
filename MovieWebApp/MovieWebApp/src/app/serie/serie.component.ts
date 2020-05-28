@@ -63,6 +63,15 @@ serie:ISerie = new ISerie
     })
   }
 
+  search(){
+    console.log(this.zoek)
+    this.serieList= this.svc.searchSerie(this.zoek).subscribe(result=> {
+    this.serieList=result
+    console.log(result)
+    })
+    window.scrollBy(0, 1500);
+  }
+
   GetApiData(){
     console.log("new database")
     this.TMdb.getSerieDetails().subscribe(result=>{
@@ -72,7 +81,6 @@ serie:ISerie = new ISerie
   }
 
   deleteSerie(id){
-    
     this.del = parseInt(id)
     this.svc.deleteFilmData(this.del).subscribe()
     location.reload()
