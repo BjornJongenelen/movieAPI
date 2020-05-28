@@ -10,28 +10,28 @@ namespace MovieAPI
 {
     [Table("serie")]
     public class serie
-    {
+    { 
+        
         [Key]
         public int id { get; set; }
 
         [Required]
-        //[StringLength(50)]
+        [StringLength(20)]
         public string Tittel { get; set; }
 
         public string Genre { get; set; }
         
         // hoofdrol spelers 
-        public string Acteurs { get; set; }
+        public acteur Acteurs { get; set; }
 
         public int Seizoen { get; set; }
 
         public int Afleveringen { get; set; }
 
         [Required]
-        //[MaxLength(50)]
-        public string Regisseur { get; set; }
+        public acteur Regisseur { get; set; }
 
-        public string Afbeelding { get; set; }
+
 
 
     }

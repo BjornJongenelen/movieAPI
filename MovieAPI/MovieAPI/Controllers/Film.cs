@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MovieAPI.Model;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace MovieAPI.Controllers
 {
@@ -24,9 +26,9 @@ namespace MovieAPI.Controllers
         }
 
         private readonly MovieTimeContext context;
-        public Film(MovieTimeContext context)
+        public Film(MovieTimeContext _context)
         {
-            this.context = context;
+            this.context = _context;
         }
 
 
@@ -34,8 +36,8 @@ namespace MovieAPI.Controllers
         [HttpGet]
         public List<film> GetAllMovies()
         {
-
-            return context.film.ToList();
+            var film = context.film.Include(a => a.Acteur).Include(b => b.Regisseur);
+            return film.ToList();
         }
 
         [HttpGet("search/{zoekterm}")]
@@ -48,16 +50,17 @@ namespace MovieAPI.Controllers
                 if (film.Tittel == zoekterm)
                     gevondenFilm.Add(film);
 
-                if (film.Acteur == zoekterm)
+                if (film.Acteur.Naam == zoekterm)
                     gevondenFilm.Add(film);
 
-                if (film.Regisseur == zoekterm)
+                if (film.Regisseur.Naam == zoekterm)
                     gevondenFilm.Add(film);
 
                 if (film.Genre == zoekterm)
                     gevondenFilm.Add(film);
+
             }
-            return gevondenFilm;
+                return gevondenFilm;         
         }
 
         //-------------------------------------------------paging

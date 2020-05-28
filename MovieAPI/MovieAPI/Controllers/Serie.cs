@@ -49,7 +49,7 @@ namespace MovieAPI.Controllers
                 if (serie.Genre == zoekterm)
                     gevondenFilm.Add(serie);
 
-                if (serie.Regisseur == zoekterm)
+                if (serie.Regisseur.Naam == zoekterm)
                     gevondenFilm.Add(serie);
             }
             return gevondenFilm;
@@ -82,7 +82,6 @@ namespace MovieAPI.Controllers
             serie.Seizoen = UpdateSerie.Seizoen;
             serie.Afleveringen = UpdateSerie.Afleveringen;
             serie.Acteurs = UpdateSerie.Acteurs;
-            serie.Afbeelding = UpdateSerie.Afbeelding;
 
             context.SaveChanges();
             return Ok(serie);

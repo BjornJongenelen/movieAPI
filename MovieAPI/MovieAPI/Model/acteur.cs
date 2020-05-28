@@ -13,10 +13,16 @@ namespace MovieAPI
         [Key]
         public int id { get; set; }
 
+        [StringLength(20)]
         public string Naam { get; set; }
+
         public int Leeftijd { get; set; }
-        public int GeboorteDatum { get; set; }
+        
+        public DateTime GeboorteDatum { get; set; }
+
+        [StringLength(20)]
         public string Nationaliteit { get; set; }
+
         public int Oscars { get; set; }
 
     }

@@ -12,6 +12,8 @@ namespace MovieAPI.Model
     public class login
     {
         [Key]
+        public int ID { get; set; }
+
         [Required]
         public string Username { get; set; }
 
@@ -21,6 +23,6 @@ namespace MovieAPI.Model
 
         [Required]
         [PasswordPropertyText]
-        public string wachtwoord { get; set; }
+        public string Wachtwoord { get; set; }
     }
 }

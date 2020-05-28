@@ -81,8 +81,8 @@ BasicLogin(){
 export class Ifilm{
   Tittel:string;
   Genre: string;
-  Acteur : string;
-  Regisseur : string;
+  Acteur : IActeur;
+  Regisseur : IActeur;
   Jaar : number;
   Oscar: boolean;
   Speelduur:number;
@@ -91,19 +91,19 @@ export class Ifilm{
 export class ISerie{
   tittel:string;
   genre:string;
-  acteurs: string;
+  acteurs: IActeur;
   jaar: number;
   seizoen:number;
   afleveringen : number;
-  regisseur : string;
+  regisseur : IActeur;
 }
 
 export class IActeur{
   naam:string;
-  leeftijd: number;
-  geboortedatum:Date;
-  nationaliteit:string;
-  oscar:number;
+  //leeftijd: number;
+  //geboortedatum:Date;
+  //nationaliteit:string;
+  //oscar:number;
 }
 
 export class Iuser{

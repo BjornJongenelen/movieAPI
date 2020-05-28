@@ -43,14 +43,14 @@ serie:ISerie = new ISerie
   sendData(){
     this.serie.tittel = this.tittel
     this.serie.genre = this.genre
-    this.serie.acteurs = this.acteur
-    this.serie.regisseur =this.regisseur
+    this.serie.acteurs.naam = this.acteur
+    this.serie.regisseur.naam =this.regisseur
     this.serie.afleveringen = parseInt(this.afleveringen)
     this.serie.seizoen = parseInt(this.seizoen)
 
-    //location.reload()
     console.log(this.serie)
     this.svc.sendSerieData(this.serie).subscribe()
+    location.reload()
     
   }
 
@@ -60,6 +60,13 @@ serie:ISerie = new ISerie
       console.log("request recieveds")
       console.log(result)
       this.serieList=result
+
+      if(this.serieList.length==0)
+      window.alert("ERROR ingegeven term bestaat niet ! \n tip: let op hoofdletters!")
+    else
+    window.scrollBy(0, 1500);
+
+
     })
   }
 

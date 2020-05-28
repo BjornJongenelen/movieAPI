@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieTimeService, Ifilm } from '../Service/movie-time.service';
+import { MovieTimeService, Ifilm, IActeur } from '../Service/movie-time.service';
 import { TheMovieDatabaseService , Pagina, IResult} from '../Service/the-movie-database.service'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -12,6 +12,7 @@ export class FilmComponent implements OnInit {
 
   film: Ifilm = new Ifilm
   SliderFilm: Pagina = new Pagina
+  Addacteur: IActeur = new IActeur
   
 
   tittel: string
@@ -29,7 +30,7 @@ export class FilmComponent implements OnInit {
 
   movieList;
   filmDatalijst;
-
+  acteurlijst;
 
   constructor(private svc: MovieTimeService , private TMdb: TheMovieDatabaseService) { 
   this.ShowAdd = false
@@ -46,13 +47,15 @@ export class FilmComponent implements OnInit {
    sendData(){
     this.film.Tittel = this.tittel
     this.film.Genre = this.genre
-    this.film.Acteur = this.acteur
-    this.film.Regisseur =this.regisseur
+    this.film.Acteur={naam:null}
+    this.film.Acteur.naam = this.acteur
+    this.film.Regisseur={naam:null}
+    this.film.Regisseur.naam =this.regisseur
     this.film.Jaar = parseInt(this.jaar)
     this.film.Oscar = JSON.parse(this.oscar)
     this.film.Speelduur = parseInt(this.speelduur)
 
-    //location.reload()
+   
     console.log(this.film)
     this.svc.sendFilmData(this.film).subscribe()
     
@@ -80,9 +83,14 @@ export class FilmComponent implements OnInit {
     this.movieList= this.svc.searchFilm(this.zoek).subscribe(result=> {
     this.movieList=result
     console.log(result)
-    })
-    
+
+    if(this.movieList.length==0)
+      window.alert("ERROR ingegeven term bestaat niet ! \n tip: let op hoofdletters!")
+    else
     window.scrollBy(0, 1500);
+
+    })
+  
   }
 
   deleteMovie(id){
@@ -101,4 +109,13 @@ export class FilmComponent implements OnInit {
     document.getElementById("AddMovie").innerHTML = "Add new movie"
   }
     
+  getActeurs(){
+    console.log("fetch data")
+    this.svc.getActeurData().subscribe(result=> {
+      console.log("request recieveds")
+      console.log(result)
+      this.acteurlijst=result
+    })
+  }
+
 }

@@ -1,5 +1,32 @@
-.table {
-    width: 80%;
-    margin: auto;
-    padding: auto;
+table {
+    position: relative;
+    top: 40px;
+    font-family: 'DM Sans', sans-serif;
+    border-collapse: collapse;
+    margin: 35px auto;
+    font-size: 0.9em;
+    max-width: 80%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+}
+
+thead tr {
+    background-color: #2F7AE5;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+th,
+td {
+    width: 175px;
+    padding: 12px 15px;
+}
+
+tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+tr:last-of-type {
+    border-bottom: 2px solid #2F7AE5;
 }
