@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieTimeService, ISerie } from '../Service/movie-time.service';
+import { MovieTimeService, ISerie, IActeur } from '../Service/movie-time.service';
 import { TheMovieDatabaseService } from '../Service/the-movie-database.service';
 
 
@@ -12,6 +12,7 @@ import { TheMovieDatabaseService } from '../Service/the-movie-database.service';
 export class SerieComponent implements OnInit {
 
 serie:ISerie = new ISerie
+Addacteur:IActeur = new IActeur
 
   tittel: string
   genre : string
@@ -29,6 +30,7 @@ serie:ISerie = new ISerie
 
   serieList;
   serieDatalijst;
+  acteurlijst;
   
 
   constructor( private svc:MovieTimeService , private TMdb:TheMovieDatabaseService) { 
@@ -43,7 +45,9 @@ serie:ISerie = new ISerie
   sendData(){
     this.serie.tittel = this.tittel
     this.serie.genre = this.genre
+    this.serie.acteurs ={naam:null}
     this.serie.acteurs.naam = this.acteur
+    this.serie.regisseur ={naam:null}
     this.serie.regisseur.naam =this.regisseur
     this.serie.afleveringen = parseInt(this.afleveringen)
     this.serie.seizoen = parseInt(this.seizoen)
@@ -99,6 +103,15 @@ serie:ISerie = new ISerie
     document.getElementById("AddSerie").innerHTML = "back"
     else
     document.getElementById("AddSerie").innerHTML = "Add new movie"
+  }
+
+  getActeurs(){
+    console.log("fetch data")
+    this.svc.getActeurData().subscribe(result=> {
+      console.log("request recieveds")
+      console.log(result)
+      this.acteurlijst=result
+    })
   }
 
 }

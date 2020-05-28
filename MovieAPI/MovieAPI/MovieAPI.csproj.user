@@ -3,5 +3,13 @@
   <PropertyGroup>
     <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Controller</Controller_SelectedScaffolderCategoryPath>
+    <GoogleCloudPublishChoice>Gke</GoogleCloudPublishChoice>
+    <GoogleCloudPublishConfiguration>Release</GoogleCloudPublishConfiguration>
+    <GoogleKubernetesEnginePublishDeploymentName>movie-api</GoogleKubernetesEnginePublishDeploymentName>
+    <GoogleKubernetesEnginePublishVersion>20200528t215549</GoogleKubernetesEnginePublishVersion>
+    <GoogleKubernetesEnginePublishReplicas>3</GoogleKubernetesEnginePublishReplicas>
+    <GoogleKubernetesEnginePublishExposeService>False</GoogleKubernetesEnginePublishExposeService>
+    <GoogleKubernetesEnginePublishExposePublicService>False</GoogleKubernetesEnginePublishExposePublicService>
+    <GoogleKubernetesEnginePublishOpenWebsite>False</GoogleKubernetesEnginePublishOpenWebsite>
   </PropertyGroup>
 </Project>

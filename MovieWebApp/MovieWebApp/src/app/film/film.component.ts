@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export class FilmComponent implements OnInit {
 
   film: Ifilm = new Ifilm
-  SliderFilm: Pagina = new Pagina
   Addacteur: IActeur = new IActeur
   
 
@@ -58,7 +57,7 @@ export class FilmComponent implements OnInit {
    
     console.log(this.film)
     this.svc.sendFilmData(this.film).subscribe()
-    
+    location.reload()
   }
 
   GetApiData(){
@@ -66,6 +65,7 @@ export class FilmComponent implements OnInit {
     this.TMdb.getFilmDetails().subscribe(result=>{
      this.filmDatalijst = result.results
      console.log(this.filmDatalijst)
+     
    })
   }
 

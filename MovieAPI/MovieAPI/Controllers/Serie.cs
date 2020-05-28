@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -33,14 +34,16 @@ namespace MovieAPI.Controllers
         [HttpGet]
         public List<serie> GetAllSerie()
         {
-            return context.serie.ToList();
+            var serie = context.serie.Include(a => a.Acteurs).Include(b => b.Regisseur);
+            return serie.ToList();
+            
         }
 
         [HttpGet("search/{zoekterm}")]
         public List<serie> search(string zoekterm)
         {
             List<serie> gevondenFilm = new List<serie>();
-            var series = context.serie;
+            var series = context.serie.Include(a => a.Acteurs).Include(b => b.Regisseur);
             foreach (var serie in series)
             {
                 if (serie.Tittel == zoekterm)

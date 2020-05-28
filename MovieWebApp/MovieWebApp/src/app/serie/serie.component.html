@@ -44,8 +44,8 @@
         <td>{{serie.id}}</td>
         <td>{{serie.tittel}}</td>
         <td>{{serie.genre}}</td>
-        <td>{{serie.acteurs}}</td>
-        <td>{{serie.regisseur}}</td>
+        <td>{{serie.acteurs.naam}}</td>
+        <td>{{serie.regisseur.naam}}</td>
         <td>{{serie.seizoen}}</td>
         <td>{{serie.afleveringen}}</td>
         <td><button class="deletebtn" (click)="deleteSerie(serie.id)">delete movie</button></td>
@@ -54,7 +54,7 @@
 </table>
 
 <div class="parentCon" *ngIf="ShowAdd==true">
-    <h2>film toevoegen</h2>
+    <h2>serie toevoegen</h2>
 
     <input placeholder="Tittel" type="text" [(ngModel)]="tittel"><br>
     <input type="text" placeholder="Acteur" [(ngModel)]="acteur"><br>

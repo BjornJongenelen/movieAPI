@@ -26,9 +26,9 @@ namespace MovieAPI.Controllers
         }
 
         private readonly MovieTimeContext context;
-        public Film(MovieTimeContext _context)
+        public Film(MovieTimeContext context)
         {
-            this.context = _context;
+            this.context = context;
         }
 
 
@@ -44,7 +44,7 @@ namespace MovieAPI.Controllers
         public List<film> search(string zoekterm)
         {
             List<film> gevondenFilm = new List<film>();
-            var films = context.film;
+            var films = context.film.Include(a => a.Acteur).Include(b => b.Regisseur);
             foreach( var film in films)
             {
                 if (film.Tittel == zoekterm)
